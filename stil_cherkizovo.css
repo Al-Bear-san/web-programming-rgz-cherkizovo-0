@@ -1,0 +1,93 @@
+.container {
+    text-align: center;
+    position: relative;
+}
+
+ul.glav {
+    padding: 0px;
+    margin-top: 0px;
+    transform: translate(0, -35%) 
+}
+
+ul.glav li {
+    display: inline;
+    margin-right: 5px;
+}
+
+.nav-main-link {
+    padding: 10px;  
+}
+
+.ccilki {
+    color: aliceblue;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+.akciy {
+    width: 1000px;
+}
+
+.logo {
+    width: 90px;
+    transform: translate(0, 41%)
+}
+
+#main-menu {
+    margin: 0;
+    display: inline;
+}
+
+.activ {
+    background-color:#D70036;
+    color: aliceblue;
+}
+
+header {
+    background-color: #012169;
+    position: fixed; 
+    width: 98%;
+    height: 56px;
+}
+
+.statya {
+    width: 400px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+.perv {
+    padding-top: 70px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    
+}
+
+footer {
+    background-color: #D70036;
+    padding: 10px;
+}
+
+.footer__item {
+    text-align: center;
+    color: aliceblue;
+}
+
+.logo_footer {
+    width: 110px;
+    margin-bottom: 15px;
+}
+
+.footer__contact{
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}

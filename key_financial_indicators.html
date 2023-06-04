@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основные финансовые показатели</title>
+    <link rel="stylesheet" href="stil_cherkizovo.css">
+    <link href="/local/templates/empty/app.min.css?v=1684679459" media="screen" rel="stylesheet">
+    <script src="functions.js"></script>
+    <style></style>
+    <script></script> 
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="main-menu"> <!-- новое меню -->
+                <ul class="glav">
+                    <li>
+                        <a href="o_company.html" id="main-logo" title="На главную">
+                            <img src="pictures/logo.jpg" class="logo"></a>
+                    </li>
+
+                    <li class="nav-main-link" onclick="">
+                        <a href="o_company.html" class="ccilki">О компании</a>
+                    </li>
+
+                    <li class="nav-main-link activ" onclick="">
+                        <a href="key_financial_indicators.html" class="ccilki">Основные финансовые показатели</a>
+                    </li>
+
+                    <li class="nav-main-link" onclick="">
+                        <a href="contact_details.html" class="ccilki">Контактные данные</a>
+                    </li>
+                        
+                    <li class="nav-main-link" onclick="">
+                        <a href="video.html" class="ccilki">Видео</a>
+                    </li>
+               </ul>
+            </div>                        
+        </div>
+    </header>
+
+    <main>
+        <div class="perv">
+            <b>Рыночная капитализация - 132 550,78 млн ₽</b><br>
+            <b>Общее число акций - 43 963 773</b><br>
+            <b>Общее число акций обращающихся на Московской фондовой бирже - 42.2 млн</b><br>
+        </div>
+
+        <table> <!--Цены на анции по дням-->
+            <tr><th>Дата</th><th>Цена</th></tr>
+            <tr><td>03.04.23</td><td>3027</td></tr>
+            <tr><td>04.04.23</td><td>3035</td></tr>
+            <tr><td>05.04.23</td><td>3033,5</td></tr>
+            <tr><td>06.04.23</td><td>3029</td></tr>
+            <tr><td>07.04.23</td><td>3034</td></tr>
+            <tr><td>10.04.23</td><td>3077</td></tr>
+            <tr><td>11.04.23</td><td>3089</td></tr>
+            <tr><td>12.04.23</td><td>3111,5</td></tr>
+            <tr><td>13.04.23</td><td>3095,5</td></tr>
+            <tr><td>14.04.23</td><td>3109,5</td></tr>
+            <tr><td>17.04.23</td><td>3142</td></tr>
+            <tr><td>18.04.23</td><td>3242,5</td></tr>
+            <tr><td>19.04.23</td><td>3201,5</td></tr>
+            <tr><td>20.04.23</td><td>3174</td></tr>
+            <tr><td>21.04.23</td><td>3180</td></tr>
+            <tr><td>24.04.23</td><td>3151</td></tr>
+            <tr><td>25.04.23</td><td>3154,5</td></tr>
+            <tr><td>26.04.23</td><td>3154,5</td></tr>
+            <tr><td>27.04.23</td><td>3147,5</td></tr>
+            <tr><td>28.04.23</td><td>3121,5</td></tr>
+        </table><br>
+
+        <img src="pictures/akcii.JPG" class="akciy"><br><br>
+
+        <b><div> <!--Min, max-->
+            <div id="min"></div> 
+            <script> 
+                let x = [3027, 3035, 3033.5, 3029, 3034, 3077, 3089, 3111.5, 3095.5, 3109.5, 3142, 3242.5, 3201.5, 3174, 3180, 3151, 3154.5 ,3154.5, 3147.5, 3121.5]; 
+                let y= Math.min(...x); 
+                document.getElementById("min").innerHTML = "Минимальное значение: " + y;
+            </script> 
+            <p></p>  
+            <div id="max"></div>   
+            <script> 
+                let q= Math.max(...x); 
+                document.getElementById("max").innerHTML = "Максимальное значение: " + q;
+            </script>       
+            <p></p> 
+            <div id="sred"></div> 
+            <script> 
+                let kolishectvo = x.length;
+                let sred = x.reduce((acc, val) => acc + val, 0) / kolishectvo;
+                let sredkvadrat = Math.sqrt(x.reduce((acc, val) => acc + (val - sred) ** 2, 0) / kolishectvo); 
+                document.getElementById("sred").innerHTML = "Среднеквадратическое отклонение: " + sredkvadrat.toFixed(2);
+            </script>
+        </div></b><br><br>
+
+        <h3>Бухгалтерский баланс</h3>
+        <table class="tbl" data-rel="form1" data-code="1000" id="tblIdx1">
+            <tbody>
+            <tr>
+                <th>Наименование показателя</th>
+                <th>Код</th>
+                <th class="dateCell">31.12.21</th><th class="dateCell">31.12.20</th><th class="dateCell">31.12.19</th><th class="dateCell">31.12.18</th><th class="dateCell">31.12.17</th><th class="dateCell">31.12.16</th><th class="dateCell">31.12.15</th><th class="dateCell">31.12.14</th><th class="dateCell">31.12.13</th><th class="dateCell">31.12.12</th>
+            </tr>
+            <tr><td colspan="12" class="titletd">АКТИВ</td></tr>
+            <tr>
+                <td colspan="12" class="titletd">I. ВНЕОБОРОТНЫЕ АКТИВЫ</td>
+            </tr>
+
+            <tr class="calcRow">
+                <td>Нематериальные активы</td>
+                <td>1110</td>
+                <td class="calcCell">10 995</td><td class="calcCell">13 032</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">22 002</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">47 411</td><td class="calcCell">61 940</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">59 437</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            
+            <tr class="calcRow">
+                <td>Основные средства</td>
+                <td>1150</td>
+                <td class="calcCell">230 285</td><td class="calcCell">212 764</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">66 359</td><td class="calcCell">73 357</td><td class="calcCell">110 127</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">63 385</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            
+            <tr class="calcRow">
+                <td>Финансовые вложения</td>
+                <td>1170</td>
+                <td class="calcCell">31 677 139</td><td class="calcCell">24 266 639</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">8 884 695</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">10 441 046</td><td class="calcCell">12 295 816</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Отложенные налоговые активы</td>
+                <td>1180</td>
+                <td class="calcCell">227 670</td><td class="calcCell">222 119</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">298 617</td><td class="calcCell">232 931</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">147 690</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">141 487</td>
+            </tr>
+            <tr class="calcRow">
+                <td>Прочие внеоборотные активы</td>
+                <td>1190</td>
+                <td class="calcCell">6 650 407</td><td class="calcCell">1 597 439</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">2 696 023</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">1 342 807</td><td class="calcCell">1 161 585</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="zero">-</span></td>
+            </tr>
+            <tr class="totalRow calcRow">
+                <td>Итого по разделу I</td>
+                <td>1100</td>
+                <td class="calcCell">38 796 496</td><td class="calcCell">26 311 993</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">12 030 746</td><td class="calcCell">10 174 543</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">13 333 136</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr><td colspan="12" class="titletd">II. ОБОРОТНЫЕ АКТИВЫ</td></tr>
+            <tr class="calcRow">
+                <td>Запасы</td>
+                <td>1210</td>
+                <td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">208</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">1 617</td><td class="calcCell">569</td>
+            </tr>
+            <tr class="calcRow">
+                <td>Налог на добавленную стоимость по приобретенным ценностям</td>
+                <td>1220</td>
+                <td class="calcCell">3 965</td><td class="calcCell">12 326</td><td class="calcCell">7 590</td><td class="calcCell">10 099</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">2 026</td><td class="calcCell">2 047</td><td class="calcCell">712</td><td class="calcCell">715</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Дебиторская задолженность</td>
+                <td>1230</td>
+                <td class="calcCell">8 303 658</td><td class="calcCell">12 126 595</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">3 519 404</td><td class="calcCell">2 606 983</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Финансовые вложения (за исключением денежных эквивалентов)</td>
+                <td>1240</td>
+                <td class="calcCell">2 466 600</td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell">1 039 013</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">2 625 469</td><td class="calcCell">247 200</td><td class="calcCell"><span title="2 633 429">2 633 430<sup style="font-size:1em;">*</sup></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Денежные средства и денежные эквиваленты</td>
+                <td>1250</td>
+                <td class="calcCell">23 186</td><td class="calcCell">17 043</td><td class="calcCell">13 723</td><td class="calcCell">5 830 916</td><td class="calcCell">461 282</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">1 389 570</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Прочие оборотные активы</td>
+                <td>1260</td>
+                <td class="calcCell">369 650</td><td class="calcCell">312 195</td><td class="calcCell">283 925</td><td class="calcCell">25 170</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">48 266</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="totalRow calcRow">
+                <td>Итого по разделу II</td>
+                <td>1200</td>
+                <td class="calcCell">11 167 059</td><td class="calcCell">12 468 159</td><td class="calcCell">6 871 941</td><td class="calcCell">13 389 248</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">5 351 431</td><td class="calcCell">8 593 737</td><td class="calcCell">4 529 709</td><td class="calcCell">2 571 422</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="totalRow calcRow" style="font-weight:bold">
+                <td>БАЛАНС</td>
+                <td>1600</td>
+                <td class="calcCell">49 963 555</td><td class="calcCell">38 780 152</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">25 419 994</td><td class="calcCell">20 162 059</td><td class="calcCell">18 584 274</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr><td colspan="12" class="titletd">ПАССИВ</td></tr>
+            <tr>
+                <td colspan="12" class="titletd">III. КАПИТАЛ И РЕЗЕРВЫ</td>
+            </tr>
+            <tr class="calcRow">
+                <td>Уставный капитал (складочный капитал, уставный фонд, вклады товарищей)</td>
+                <td>1310</td>
+                <td class="calcCell">410</td><td class="calcCell">410</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Собственные акции, выкупленные у акционеров</td>
+                <td>1320</td>
+                <td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell">(4 386 806)</td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell">(62 862)</td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td>
+            </tr>
+            
+            <tr class="calcRow">
+                <td>Добавочный капитал (без переоценки)</td>
+                <td>1350</td>
+                <td class="calcCell">8 907 333</td><td class="calcCell">5 308 820</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Резервный капитал</td>
+                <td>1360</td>
+                <td class="calcCell">22</td><td class="calcCell">22</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Нераспределенная прибыль (непокрытый убыток)</td>
+                <td>1370</td>
+                <td class="calcCell">17 646 408</td><td class="calcCell">9 910 980</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">5 755 601</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">3 232 822</td><td class="calcCell">3 557 892</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">1 729 891</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Итого по разделу III</td>
+                <td>1300</td>
+                <td class="calcCell">26 554 173</td><td class="calcCell">15 220 232</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">15 451 660</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">11 424 845</td><td class="calcCell">10 401 339</td>
+            </tr>
+            <tr>
+                <td colspan="12" class="titletd">IV. ДОЛГОСРОЧНЫЕ ОБЯЗАТЕЛЬСТВА</td>
+            </tr>
+            <tr class="calcRow">
+                <td>Заемные средства</td>
+                <td>1410</td>
+                <td class="calcCell">22 300 000</td><td class="calcCell">22 300 000</td><td class="calcCell">10 000 000</td><td class="calcCell">5 000 000</td><td class="calcCell">5 000 000</td><td class="calcCell">5 000 000</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">3 012 972</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Отложенные налоговые обязательства</td>
+                <td>1420</td>
+                <td class="calcCell">40 907</td><td class="calcCell">35 733</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">4 069</td><td class="calcCell">154</td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td>
+            </tr>
+            
+            
+            <tr class="totalRow calcRow">
+                <td>Итого по разделу IV</td>
+                <td>1400</td>
+                <td class="calcCell">22 340 907</td><td class="calcCell">22 335 733</td><td class="calcCell">10 002 154</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">5 000 000</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">3 012 972</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr><td colspan="12" class="titletd">V. КРАТКОСРОЧНЫЕ ОБЯЗАТЕЛЬСТВА</td></tr>
+            <tr class="calcRow">
+                <td>Заемные средства</td>
+                <td>1510</td>
+                <td class="calcCell">97 835</td><td class="calcCell">93 971</td><td class="calcCell">5 213 764</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">140 557</td><td class="calcCell">138 797</td><td class="calcCell">3 205 271</td><td class="calcCell">93 931</td><td class="calcCell">811 097</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Кредиторская задолженность</td>
+                <td>1520</td>
+                <td class="calcCell">318 794</td><td class="calcCell">620 382</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">360 763</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">206 660</td><td class="calcCell">68 884</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            
+            <tr class="calcRow">
+                <td>Оценочные обязательства</td>
+                <td>1540</td>
+                <td class="calcCell">651 846</td><td class="calcCell">509 834</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">822 881</td><td class="calcCell">434 903</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">249 834</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Прочие обязательства</td>
+                <td>1550</td>
+                <td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell">114</td><td class="calcCell">114</td><td class="calcCell">114</td><td class="calcCell">7 581</td>
+            </tr>
+            <tr class="calcRow">
+                <td>Итого по разделу V</td>
+                <td>1500</td>
+                <td class="calcCell">1 068 475</td><td class="calcCell">1 224 187</td><td class="calcCell">6 185 019</td><td class="calcCell">4 964 265</td><td class="calcCell">936 223</td><td class="calcCell">656 476</td><td class="calcCell">3 661 879</td><td class="calcCell">189 409</td><td class="calcCell">925 094</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr style="font-weight:bold" class="calcRow">
+                <td>БАЛАНС</td>
+                <td>1700</td>
+                <td class="calcCell">49 963 555</td><td class="calcCell">38 780 152</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">25 419 994</td><td class="calcCell">20 162 059</td><td class="calcCell">18 584 274</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            </tbody>
+        </table><br><br>
+
+        <h3>
+            Динамика трех ключевых показателей, характеризующих структуру баланса организации, приведена на следующем графике.
+        </h3>
+        <div class="scroll-on-mobile">
+            <table class="tblFin">
+                <thead>
+                    <tr>
+                        <th>Финансовый показатель</th>
+                        <th>31.12.2021</th><th>31.12.2020</th><th>31.12.2019</th><th>31.12.2018</th><th>31.12.2017</th><th>31.12.2016</th><th>31.12.2015</th><th>31.12.2014</th><th>31.12.2013</th><th>31.12.2012</th>                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Чистые активы</td>
+                        <td class="currencyCell">26 554 173</td><td class="numCell" style="color:#000"><span class="bo-show-more"></span></td><td class="currencyCell">12 777 697</td><td class="currencyCell">15 451 660</td><td class="currencyCell">14 225 682</td><td class="currencyCell">12 927 798</td><td class="currencyCell">13 252 868</td><td class="currencyCell">13 139 840</td><td class="currencyCell">11 424 845</td><td class="currencyCell">10 401 339</td>                    </tr>
+                    <tr>
+                        <td>Коэффициент автономии (норма: 0,5 и более)</td>
+                        <td class="numCell" style="color:#000"><span class="bo-show-more"></span></td><td class="numCell" style="color:red">0.39</td><td class="numCell" style="color:red">0.44</td><td class="numCell" style="color:green">0.61</td><td class="numCell" style="color:green">0.71</td><td class="numCell" style="color:green">0.7</td><td class="numCell" style="color:green">0.6</td><td class="numCell" style="color:green">0.8</td><td class="numCell" style="color:green">0.74</td><td class="numCell" style="color:green">0.71</td>                    </tr>
+                    <tr>
+                        <td>Коэффициент текущей ликвидности (норма: 1,5-2 и выше)</td>
+                        <td class="numCell" style="color:green">10.5</td><td class="numCell" style="color:#000"><span class="bo-show-more"></span></td><td class="numCell" style="color:red">1.1</td><td class="numCell" style="color:green">2.7</td><td class="numCell" style="color:green">10.7</td><td class="numCell" style="color:green">8.2</td><td class="numCell" style="color:green">2.3</td><td class="numCell" style="color:green">23.9</td><td class="numCell" style="color:green">2.8</td><td class="numCell" style="color:red">1</td>                    </tr>
+                </tbody>
+            </table>
+        </div><br><br>
+
+        <h3 style="margin-top: 0">Отчет о финансовых результатах (прибылях и убытках)</h3>
+        <table class="tbl" data-rel="form2" data-code="2000" id="tblIdx2">
+            <tbody>
+            <tr>
+                <th>Наименование показателя</th>
+                <th>Код</th>
+                <th class="periodCell">2021</th><th class="periodCell">2020</th><th class="periodCell">2019</th><th class="periodCell">2018</th><th class="periodCell">2017</th><th class="periodCell">2016</th><th class="periodCell">2015</th><th class="periodCell">2014</th><th class="periodCell">2013</th><th class="periodCell">2012</th>
+            </tr>
+            <tr class="calcRow">
+                <td>Выручка</td>
+                <td>2110</td>
+                <td class="calcCell">21 437 269</td><td class="calcCell">11 248 516</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">7 933 598</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">240 836</td>
+            </tr>
+            <tr class="calcRow">
+                <td>Себестоимость продаж</td>
+                <td>2120</td>
+                <td class="minus calcCell">(2 227 017)</td><td class="minus calcCell">(2 056 913)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(1 168 268)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(295 613)</td><td class="minus calcCell">(199 439)</td><td class="minus calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Валовая прибыль (убыток)</td>
+                <td>2100</td>
+                <td class="calcCell">19 210 252</td><td class="calcCell">9 191 603</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">1 998 381</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            
+            <tr class="calcRow">
+                <td>Управленческие расходы</td>
+                <td>2220</td>
+                <td class="minus calcCell">(2 196 156)</td><td class="minus calcCell">(1 353 461)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(869 883)</td><td class="minus calcCell">(977 356)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(719 657)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(90 834)</td>
+            </tr>
+            <tr class="totalRow calcRow">
+                <td>Прибыль (убыток) от продаж</td>
+                <td>2200</td>
+                <td class="calcCell">17 014 096</td><td class="calcCell">7 838 142</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">10 080 759</td><td class="calcCell">5 573 755</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">18 123</td>
+            </tr>
+            
+            <tr class="calcRow">
+                <td>Проценты к получению</td>
+                <td>2320</td>
+                <td class="calcCell">1 522 047</td><td class="calcCell">780 842</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">59 539</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">402 844</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">533 104</td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Проценты к уплате</td>
+                <td>2330</td>
+                <td class="minus calcCell">(1 532 562)</td><td class="minus calcCell">(1 349 441)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(432 758)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(418 467)</td><td class="minus calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Прочие доходы</td>
+                <td>2340</td>
+                <td class="calcCell">145 046</td><td class="calcCell">239 263</td><td class="calcCell">343 602</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">181 864</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">52 121</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">47 078</td>
+            </tr>
+            <tr class="calcRow">
+                <td>Прочие расходы</td>
+                <td>2350</td>
+                <td class="minus calcCell">(253 778)</td><td class="minus calcCell">(452 265)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(4 233 367)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(143 478)</td><td class="minus calcCell">(86 297)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(345 440)</td><td class="minus calcCell">(578 530)</td>
+            </tr>
+            <tr class="totalRow calcRow">
+                <td>Прибыль (убыток) до налогообложения</td>
+                <td>2300</td>
+                <td class="calcCell">16 894 849</td><td class="calcCell">7 056 541</td><td class="calcCell">8 094 693</td><td class="calcCell">5 392 842</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">642 921</td><td class="calcCell">3 500 368</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">465 184</td>
+            </tr>
+            <tr class="calcRow">
+                <td>Налог на прибыль</td>
+                <td>2410</td>
+                <td class="calcCell">(11 969)</td><td class="calcCell">(25 817)</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span title="0">(2 464)<sup style="font-size:1em;">*</sup></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>текущий налог на прибыль (до 2020 г. это стр. 2410)</td>
+                <td>2411</td>
+                <td class="minus calcCell">(12 346)</td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span title="(0)">(12 667)<sup style="font-size:1em;">*</sup></span></td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>отложенный налог на прибыль</td>
+                <td>2412</td>
+                <td class="calcCell">377</td><td class="calcCell">(25 817)</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td>
+            </tr>
+        
+            <tr class="calcRow">
+                <td>Изменение отложенных налоговых обязательств</td>
+                <td>2430</td>
+                <td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell">(3 915)</td><td class="calcCell">(154)</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell">(1 562)</td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+            </tr>
+            <tr class="calcRow">
+                <td>Изменение отложенных налоговых активов</td>
+                <td>2450</td>
+                <td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell">65 686</td><td class="calcCell">(7 482)</td><td class="calcCell">92 723</td><td class="calcCell">83 541</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">53 959</td>
+            </tr>
+            <tr class="calcRow">
+                <td>Прочее</td>
+                <td>2460</td>
+                <td class="calcCell">(147 073)</td><td class="calcCell">(84 920)</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">(93 070)</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">(70 283)</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">(29 229)</td>
+            </tr>
+            <tr class="totalRow calcRow">
+                <td>Чистая прибыль (убыток)</td>
+                <td>2400</td>
+                <td class="calcCell">16 735 807</td><td class="calcCell">6 945 804</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">4 590 851</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">3 513 626</td><td class="calcCell">3 229 107</td><td class="calcCell">1 023 506</td><td class="calcCell">490 780</td>
+            </tr>
+            <tr><td colspan="12" class="titletd">СПРАВОЧНО</td></tr>
+            
+            
+            <tr class="totalRow calcRow">
+                <td>Совокупный финансовый результат периода</td>
+                <td>2500</td>
+                <td class="calcCell">16 735 807</td><td class="calcCell">6 945 804</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">4 590 851</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">3 513 626</td><td class="calcCell">3 229 107</td><td class="calcCell">1 023 506</td><td class="calcCell">490 780</td>
+            </tr>
+            </tbody>
+        </table><br><br>
+
+        <h3>Краткий анализ финансовых результатов</h3>
+        <table class="tblFin">
+            <thead>
+                <tr>
+                    <th>Финансовый показатель</th>
+                    <th>2021</th><th>2020</th><th>2019</th><th>2018</th><th>2017</th><th>2016</th><th>2015</th><th>2014</th><th>2013</th>                    </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><abbr title="EBIT (Earnings Before Interest and Taxes) – прибыль до вычета процентов и налогов.">EBIT</abbr></td>
+                    <td class="numCell" style="color:#000"><span class="bo-show-more"></span></td><td class="currencyCell">8 405 982</td><td class="currencyCell">8 789 715</td><td class="currencyCell">6 017 967</td><td class="currencyCell">5 817 571</td><td class="currencyCell">1 345 784</td><td class="currencyCell">3 933 126</td><td class="currencyCell">3 608 288</td><td class="currencyCell">1 519 628</td>                    </tr>
+                <tr>
+                    <td>Рентабельность продаж (прибыли от продаж в каждом рубле выручки)</td>
+                    <td class="numCell" style="color:green">79.4%</td><td class="numCell" style="color:#000"><span class="bo-show-more"></span></td><td class="numCell" style="color:green">72.7%</td><td class="numCell" style="color:green">76.7%</td><td class="numCell" style="color:green">70.3%</td><td class="numCell" style="color:green">32.2%</td><td class="numCell" style="color:green">64.9%</td><td class="numCell" style="color:red">-2.9%</td><td class="numCell" style="color:green">2%</td>                    </tr>
+                <tr>
+                    <td>Рентабельность собственного капитала (ROE)</td>
+                    <td class="numCell" style="color:#000"><span class="bo-show-more"></span></td><td class="numCell" style="color:green">50%</td><td class="numCell" style="color:green">56%</td><td class="numCell" style="color:green">36%</td><td class="numCell" style="color:green">34%</td><td class="numCell" style="color:green">5%</td><td class="numCell" style="color:green">27%</td><td class="numCell" style="color:green">26%</td><td class="numCell" style="color:green">9%</td>                    </tr>
+                <tr>
+                    <td>Рентабельность активов (ROA)</td>
+                    <td class="numCell" style="color:green">37.7%</td><td class="numCell" style="color:#000"><span class="bo-show-more"></span></td><td class="numCell" style="color:green">29%</td><td class="numCell" style="color:green">23.5%</td><td class="numCell" style="color:green">23.7%</td><td class="numCell" style="color:green">3.3%</td><td class="numCell" style="color:green">18.4%</td><td class="numCell" style="color:green">20.4%</td><td class="numCell" style="color:green">6.8%</td>                    </tr>
+            </tbody>
+        </table><br><br>
+
+        <h3>Отчет о движении денежных средств</h3>
+        <div id="form4" class="scroll-on-mobile">
+            <table class="tbl" data-rel="form4" data-code="4000" id="tblIdx3">
+            <tbody>
+                <tr>
+                    <th>Наименование показателя</th>
+                    <th>Код</th>
+                    <th class="periodCell">2021</th><th class="periodCell">2020</th><th class="periodCell">2019</th><th class="periodCell">2018</th><th class="periodCell">2017</th><th class="periodCell">2016</th><th class="periodCell">2014</th><th class="periodCell">2013</th>
+                </tr>
+                <tr>
+                    <td colspan="10">Денежные потоки от текущих операций</td>
+                </tr>
+                <tr class="calcRow">
+                    <td>Поступления - всего</td>
+                    <td>4110</td>
+                    <td class="calcCell">21 599 737</td><td class="calcCell">10 891 101</td><td class="calcCell">8 797 615</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">8 165 248</td><td class="calcCell">1 397 862</td><td class="calcCell">2 255 466</td><td class="calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">в том числе:<br>от продажи продукции, товаров, работ и услуг</td>
+                    <td>4111</td>
+                    <td class="calcCell">4 336 390</td><td class="calcCell">3 368 437</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">арендных платежей, лицензионных платежей, роялти, комиссионных и иных аналогичных платежей</td>
+                    <td>4112</td>
+                    <td class="calcCell">131 565</td><td class="calcCell">24 462</td><td class="calcCell">52 942</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">86 096</td><td class="calcCell">55 012</td>
+                </tr>
+
+                <tr class="calcRow">
+                    <td class="sub">вписываемый показатель (по поступлениям от денежных потоков от текущих операций)</td>
+                    <td>4118</td>
+                    <td class="calcCell">1 024</td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">прочие поступления</td>
+                    <td>4119</td>
+                    <td class="calcCell">17 130 758</td><td class="calcCell">7 498 202</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">6 409 312</td><td class="calcCell">273 061</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td>Платежи - всего</td>
+                    <td>4120</td>
+                    <td class="minus calcCell">(6 594 087)</td><td class="minus calcCell">(5 271 454)</td><td class="minus calcCell">(8 414 239)</td><td class="minus calcCell">(3 978 221)</td><td class="minus calcCell">(3 668 916)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(3 243 569)</td><td class="minus calcCell">(1 258 213)</td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">в том числе:<br>поставщикам (подрядчикам) за сырье, материалы, работы, услуги</td>
+                    <td>4121</td>
+                    <td class="minus calcCell">(1 658 447)</td><td class="minus calcCell">(1 331 571)</td><td class="minus calcCell">(1 424 495)</td><td class="minus calcCell">(1 014 880)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(679 400)</td><td class="minus calcCell">(388 100)</td><td class="minus calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">в связи с оплатой труда работников</td>
+                    <td>4122</td>
+                    <td class="minus calcCell">(3 020 536)</td><td class="minus calcCell">(2 154 578)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(350 297)</td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">процентов по долговым обязательствам</td>
+                    <td>4123</td>
+                    <td class="minus calcCell">(1 527 860)</td><td class="minus calcCell">(1 468 698)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(392 659)</td>
+                </tr>
+
+                <tr class="calcRow">
+                    <td class="sub">вписываемый показатель (по платежам денежных потоков от текущих операций)</td>
+                    <td>4128</td>
+                    <td class="calcCell">210 000</td><td class="calcCell">100 990</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">прочие платежи</td>
+                    <td>4129</td>
+                    <td class="minus calcCell">(177 244)</td><td class="minus calcCell">(215 617)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(100 063)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(216 901)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td>Сальдо денежных потоков от текущих операций</td>
+                    <td>4100</td>
+                    <td class="calcCell">15 005 650</td><td class="calcCell">5 619 647</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">9 517 339</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">(988 103)</td><td class="calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+                <tr>
+                    <td colspan="10">Денежные потоки от инвестиционных операций</td>
+                </tr>
+                <tr class="calcRow">
+                    <td>Поступления - всего</td>
+                    <td>4210</td>
+                    <td class="calcCell">5 382 532</td><td class="calcCell">2 336 443</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">6 238 769</td><td class="calcCell">3 987 117</td><td class="calcCell">5 739 403</td><td class="calcCell">5 736 130</td><td class="calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">в том числе:<br>от продажи внеоборотных активов (кроме финансовых вложений)</td>
+                    <td>4211</td>
+                    <td class="calcCell">6 431</td><td class="calcCell">2 894</td><td class="calcCell">2 430</td><td class="calcCell">781</td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell">7</td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">от продажи акций других организаций (долей участия)</td>
+                    <td>4212</td>
+                    <td class="calcCell"><span class="zero">-</span></td><td class="calcCell">1 711 632</td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">от возврата предоставленных займов, от продажи долговых ценных бумаг (прав требования денежных средств к другим лицам)</td>
+                    <td>4213</td>
+                    <td class="calcCell">5 376 019</td><td class="calcCell">601 177</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">6 188 219</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">2 399 039</td><td class="calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">дивидендов, процентов по долговым финансовым вложениям и аналогичных поступлений от долевого участия в других организациях</td>
+                    <td>4214</td>
+                    <td class="calcCell">82</td><td class="calcCell">20 740</td><td class="calcCell">79 630</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+
+                <tr class="calcRow">
+                    <td class="sub">прочие поступления</td>
+                    <td>4219</td>
+                    <td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell">46</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="zero">-</span></td>
+                </tr><tr class="calcRow">
+                    <td>Платежи - всего</td>
+                    <td>4220</td>
+                    <td class="minus calcCell">(14 979 307)</td><td class="minus calcCell">(10 747 311)</td><td class="minus calcCell">(11 454 569)</td><td class="minus calcCell">(6 252 411)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(3 432 411)</td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">в том числе:<br>в связи с приобретением, созданием, модернизацией, реконструкцией и подготовкой к использованию внеоборотных активов</td>
+                    <td>4221</td>
+                    <td class="minus calcCell">(53 007)</td><td class="minus calcCell">(52 251)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(78 961)</td><td class="minus calcCell">(7 279)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(64 522)</td><td class="minus calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">в связи с приобретением акций других организаций (долей участия)</td>
+                    <td>4222</td>
+                    <td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell">(5 365)</td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="zero">-</span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">в связи с приобретением долговых ценных бумаг (прав требования денежных средств к другим лицам), предоставление займов другим лицам</td>
+                    <td>4223</td>
+                    <td class="minus calcCell">(14 926 300)</td><td class="minus calcCell">(10 695 060)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(6 173 450)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(3 254 522)</td>
+                </tr>
+
+                <tr class="calcRow">
+                    <td>Сальдо денежных потоков от инвестиционных операций</td>
+                    <td>4200</td>
+                    <td class="calcCell">(9 596 775)</td><td class="calcCell">(8 410 868)</td><td class="calcCell">(9 938 809)</td><td class="calcCell">(13 642)</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">1 179 212</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">1 426 542</td>
+                </tr>
+                <tr>
+                    <td colspan="10">Денежные потоки от финансовых операций</td>
+                </tr>
+                <tr class="calcRow">
+                    <td>Поступления - всего</td>
+                    <td>4310</td>
+                    <td class="calcCell">7 098 583</td><td class="calcCell">12 298 462</td><td class="calcCell">9 998 750</td><td class="calcCell">63 960</td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">3 524 827</td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">в том числе:<br>получение кредитов и займов</td>
+                    <td>4311</td>
+                    <td class="calcCell">3 500 000</td><td class="calcCell">12 298 462</td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">524 827</td>
+                </tr>
+
+                <tr class="calcRow">
+                    <td class="sub">от выпуска акций, увеличения долей участия</td>
+                    <td>4313</td>
+                    <td class="calcCell">3 598 583</td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell">9 998 750</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td>
+                </tr>
+
+                <tr class="calcRow">
+                    <td>Платежи - всего</td>
+                    <td>4320</td>
+                    <td class="minus calcCell">(12 501 321)</td><td class="minus calcCell">(9 504 227)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(4 198 461)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(2 719 120)</td><td class="minus calcCell">(4 709 389)</td>
+                </tr>
+
+                <tr class="calcRow">
+                    <td class="sub">на уплату дивидендов и иных платежей</td>
+                    <td>4322</td>
+                    <td class="minus calcCell">(9 000 340)</td><td class="minus calcCell">(4 503 268)</td><td class="minus calcCell">(6 174 282)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell">(3 226 419)</td><td class="minus calcCell">(1 000 175)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="zero">-</span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td class="sub">по распределению прибыли в пользу собственников (участников) в связи с погашением (выкупом) векселей и других долговых ценных бумаг, возврат кредитов и займов</td>
+                    <td>4323</td>
+                    <td class="minus calcCell">(3 500 981)</td><td class="minus calcCell">(5 000 959)</td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td><td class="minus calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+
+                <tr class="calcRow">
+                    <td>Сальдо денежных потоков от финансовых операций</td>
+                    <td>4300</td>
+                    <td class="calcCell">(5 402 738)</td><td class="calcCell">2 794 235</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">(4 134 501)</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">(2 247 290)</td><td class="calcCell"><span class="bo-show-more"></span></td>
+                </tr>
+                <tr class="totalRow calcRow">
+                    <td>Сальдо денежных потоков за отчетный период</td>
+                    <td>4400</td>
+                    <td class="calcCell">6 137</td><td class="calcCell">3 014</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">(21 873)</td>
+                </tr>
+                <tr class="totalRow calcRow">
+                    <td>Остаток денежных средств и денежных эквивалентов на начало отчетного периода</td>
+                    <td>4450</td>
+                    <td class="calcCell">17 043</td><td class="calcCell">13 723</td><td class="calcCell">5 830 916</td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td>
+                </tr>
+                <tr class="totalRow calcRow">
+                    <td>Остаток денежных средств и денежных эквивалентов на конец отчетного периода</td>
+                    <td>4500</td>
+                    <td class="calcCell">23 186</td><td class="calcCell">17 043</td><td class="calcCell">13 723</td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td><td class="calcCell"><span class="zero">-</span></td>
+                </tr>
+                <tr class="calcRow">
+                    <td>Величина влияния изменений курса иностранной валюты по отношению к рублю</td>
+                    <td>4490</td>
+                    <td class="calcCell">6</td><td class="calcCell">306</td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell"><span class="bo-show-more"></span></td><td class="calcCell">313</td><td class="calcCell">68</td>
+                </tr>
+            </tbody>
+            </table>            
+        </div><br><br>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="footer__item footer__item-small">
+                    <a href="" title="На главную" class="footer__logo">
+                        <img src="pictures/logo.jpg" class="logo_footer">
+                    </a>
+
+                    <p class="copyright">2005–2023 © ООО «ТД Черкизово»</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__item footer__item-small">
+                <div class="footer__contacts">
+                    <p class="footer__contact footer__contact-address">107143, г. Москва,<br>
+                        ул. Пермская, владение 5
+                    </p>
+                    <p class="footer__contact footer__contact-phone">
+                        <a href="tel:8-800-234-11-50"  class="ccilki">
+                            8-800-234-11-50
+                        </a><br>
+                        Звонок по России бесплатный
+                    </p>
+                    <p class="footer__contact footer__contact-email">
+                        <a href="mailto:sk@cherkizovo.com"  class="ccilki">sk@cherkizovo.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
